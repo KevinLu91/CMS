@@ -17,7 +17,7 @@ import { useHistory } from "react-router-dom";
 import { useStyles } from "./AccordionListStyle";
 import { UserContext } from "../../components/UserContext/UserContext";
 
-const AccordinList = ({ movieList }) => {
+const AccordinList = ({ movieList, setOpenSnackbar }) => {
   const classes = useStyles();
   const token = Cookie.get("token");
   const history = useHistory();
@@ -37,6 +37,7 @@ const AccordinList = ({ movieList }) => {
         )
         .then((res) => {
           console.log(res);
+          setOpenSnackbar(true);
         })
         .catch((err) => {
           console.log(err);
