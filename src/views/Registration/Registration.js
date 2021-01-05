@@ -62,7 +62,7 @@ const Registration = () => {
       <CssBaseline />
       <div className={classes.paper}>
         <Avatar className={classes.avatar}>
-          <LockOutlinedIcon />
+          <img src="../../../public/image/strapi.png" />
         </Avatar>
         <Typography component="h1" variant="h5">
           Registration
