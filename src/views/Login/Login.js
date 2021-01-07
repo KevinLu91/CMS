@@ -1,6 +1,5 @@
 import React, { useState, useContext } from "react";
 import {
-  Avatar,
   Button,
   CssBaseline,
   TextField,
@@ -11,7 +10,6 @@ import {
   Typography,
   Container,
 } from "@material-ui/core";
-import LockOutlinedIcon from "@material-ui/icons/LockOutlined";
 import axios from "axios";
 import { useHistory } from "react-router-dom";
 import Cookie from "js-cookie";
@@ -66,9 +64,7 @@ const Login = () => {
     <Container component="main" maxWidth="xs">
       <CssBaseline />
       <div className={classes.paper}>
-        <Avatar className={classes.avatar}>
-          <LockOutlinedIcon />
-        </Avatar>
+        <img src="./Image/strapi.png" style={{ width: "400px" }} alt="logo" />
         <Typography component="h1" variant="h5">
           Sign in
         </Typography>

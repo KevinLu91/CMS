@@ -1,13 +1,16 @@
 import React, { useContext } from "react";
-import Accordion from "@material-ui/core/Accordion";
-import AccordionSummary from "@material-ui/core/AccordionSummary";
-import AccordionActions from "@material-ui/core/AccordionActions";
-import Typography from "@material-ui/core/Typography";
+import {
+  Accordion,
+  AccordionSummary,
+  AccordionActions,
+  Typography,
+  Button,
+  Divider,
+} from "@material-ui/core";
 import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
-import Button from "@material-ui/core/Button";
-import Divider from "@material-ui/core/Divider";
 import axios from "axios";
 import Cookie from "js-cookie";
+import { useHistory } from "react-router-dom";
 
 import { UserContext } from "../../components/UserContext/UserContext";
 import { useStyles } from "../HomeComponents/AccordionListStyle";
@@ -16,6 +19,7 @@ const WatchlistMovie = ({ movies, setMovies }) => {
   const classes = useStyles();
   const token = Cookie.get("token");
   const { user } = useContext(UserContext);
+  const history = useHistory();
 
   const handleRemoveFromWatchlist = (id) => {
     axios
@@ -81,8 +85,12 @@ const WatchlistMovie = ({ movies, setMovies }) => {
 
             <Divider />
             <AccordionActions>
-              <Button className={classes.button} size="small">
-                Cancel
+              <Button
+                className={classes.button}
+                size="small"
+                onClick={() => history.push(`/movie/${movie.id}`)}
+              >
+                More about the movie
               </Button>
               <Button
                 className={classes.button}

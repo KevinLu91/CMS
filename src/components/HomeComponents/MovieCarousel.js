@@ -20,7 +20,11 @@ const MovieCarousel = ({ randomMovies }) => {
       <Carousel showArrows={true} showThumbs={false}>
         {randomMovies.length > 0 ? (
           randomMovies.map((movie) => (
-            <div key={movie}>
+            <div
+              key={movie}
+              onClick={() => handleOnClickMovie(movie.id)}
+              style={{ cursor: "pointer" }}
+            >
               <img
                 style={{ width: "40%" }}
                 src={`http://localhost:1337${movie.Image[0].url}`}
@@ -31,9 +35,7 @@ const MovieCarousel = ({ randomMovies }) => {
                 style={{
                   marginBottom: "30px",
                   color: "white",
-                  cursor: "pointer",
                 }}
-                onClick={() => handleOnClickMovie(movie.id)}
               >
                 {movie.Title}
               </p>

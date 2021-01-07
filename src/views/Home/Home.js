@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import MuiAlert from "@material-ui/lab/Alert";
+import Alert from "@material-ui/lab/Alert";
 import { Snackbar } from "@material-ui/core";
 
 import { Container } from "./HomeStyle";
@@ -46,9 +46,9 @@ const Home = () => {
         autoHideDuration={3000}
         onClose={() => setOpenSnackbar(false)}
       >
-        <MuiAlert onClose={() => setOpenSnackbar(false)} severity="success">
+        <Alert onClose={() => setOpenSnackbar(false)} severity="success">
           Successfully added to watchlist
-        </MuiAlert>
+        </Alert>
       </Snackbar>
     </Container>
   );

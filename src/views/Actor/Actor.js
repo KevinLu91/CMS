@@ -23,7 +23,7 @@ const Actor = () => {
     axios
       .get(`http://localhost:1337/actors/${slug.id}`)
       .then((res) => {
-        console.log(res.data.movies);
+        console.log(res.data);
         setActorInfo(res.data);
         setMovieList(res.data.movies);
       })

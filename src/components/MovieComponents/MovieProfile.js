@@ -47,6 +47,7 @@ const MovieProfile = ({ movieInfo }) => {
                 href={`/director/${director.id}`}
                 className={classes.link}
                 key={director.id}
+                style={{ marginRight: "15px" }}
               >
                 {director.Name}
               </a>
@@ -64,6 +65,7 @@ const MovieProfile = ({ movieInfo }) => {
                 href={`/actor/${actor.id}`}
                 className={classes.link}
                 key={actor.id}
+                style={{ marginRight: "5px" }}
               >
                 {actor.Name}
               </a>
