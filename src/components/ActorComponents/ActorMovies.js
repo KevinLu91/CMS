@@ -8,11 +8,6 @@ const useStyles = makeStyles({
     width: "55%",
     marginBottom: 25,
   },
-  bullet: {
-    display: "inline-block",
-    margin: "0 2px",
-    transform: "scale(0.8)",
-  },
   title: {
     marginBottom: 12,
   },

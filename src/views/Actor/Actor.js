@@ -1,10 +1,12 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import { useParams } from "react-router-dom";
 import axios from "axios";
 import styled from "styled-components";
 
 import ProfileCard from "../../components/ActorComponents/ProfileCard";
 import ActorMovies from "../../components/ActorComponents/ActorMovies";
+import ActorActions from "../../components/ActorComponents/ActorActions";
+import { UserContext } from "../../components/UserContext/UserContext";
 
 const Wrapper = styled.div`
   display: flex;
@@ -17,7 +19,9 @@ const Wrapper = styled.div`
 const Actor = () => {
   const [actorInfo, setActorInfo] = useState("");
   const [movieList, setMovieList] = useState([]);
+
   let slug = useParams();
+  const { user } = useContext(UserContext);
 
   useEffect(() => {
     axios
@@ -34,6 +38,7 @@ const Actor = () => {
 
   return (
     <Wrapper>
+      {user && <ActorActions actorInfo={actorInfo} />}
       <ProfileCard actorInfo={actorInfo} />
       <ActorMovies movieList={movieList} />
     </Wrapper>

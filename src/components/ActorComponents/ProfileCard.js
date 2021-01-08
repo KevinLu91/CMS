@@ -13,10 +13,11 @@ const ProfileCard = ({ actorInfo }) => {
         {actorInfo && (
           <img
             style={{ width: "300px" }}
-            src={`http://localhost:1337${actorInfo.Image[0].formats.medium.url}`}
+            src={`http://localhost:1337${actorInfo.Image[0].url}`}
             alt={actorInfo.Name}
           />
         )}
+
         <Typography component="h3">Biography:</Typography>
         <Typography
           variant="body2"

@@ -23,7 +23,7 @@ const ActorsProfile = ({ actorList }) => {
               {actorList.length > 0 && (
                 <img
                   style={{ width: "300px" }}
-                  src={`http://localhost:1337${actor.Image[0].formats.medium.url}`}
+                  src={`http://localhost:1337${actor.Image[0].url}`}
                   alt={actor.Name}
                 />
               )}
