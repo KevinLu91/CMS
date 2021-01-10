@@ -10,6 +10,9 @@ export const useStyles = makeStyles((theme) => ({
   card: {
     padding: 30,
     marginBottom: 30,
-    textAlign: "center",
+
+    display: "flex",
+    flexDirection: "column",
+    alignItems: "center",
   },
 }));
