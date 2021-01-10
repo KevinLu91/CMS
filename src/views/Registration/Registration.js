@@ -46,8 +46,6 @@ const Registration = () => {
       })
       .then((response) => {
         console.log("Well done!");
-        console.log("User profile", response.data.user);
-        console.log("User token", response.data.jwt);
         history.push("/login");
       })
       .catch((error) => {

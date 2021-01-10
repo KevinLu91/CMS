@@ -46,12 +46,8 @@ const Login = () => {
         password: password,
       })
       .then((response) => {
-        // Handle success.
         console.log("Well done!");
-        console.log("User profile", response.data.user);
-        console.log("User token", response.data.jwt);
         Cookie.set("token", response.data.jwt);
-        // Cookie.remove("token");
         setUser(response.data.user);
       })
       .catch((error) => {
@@ -108,11 +104,7 @@ const Login = () => {
             Sign In
           </Button>
           <Grid container>
-            <Grid item xs>
-              <Link href="#" variant="body2">
-                Forgot password?
-              </Link>
-            </Grid>
+            <Grid item xs></Grid>
             <Grid item>
               <Link href="/registration" variant="body2">
                 {"Don't have an account? Sign Up"}
